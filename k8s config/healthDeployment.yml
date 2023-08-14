@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthtracker
+spec:
+  selector:
+    matchLabels:
+      app: healthtracker
+  template:
+    metadata:
+      labels:
+        app: healthtracker
+    spec:
+      containers:
+      - name: healthtracker
+        image: sanmargparanjpe/healthtracker
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3001
