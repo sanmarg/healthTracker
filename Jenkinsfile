@@ -1,7 +1,5 @@
 pipeline{
-    agent{
-        any
-    }
+    agent any
     stages{
         stage("Cleanup..."){
             steps{
@@ -33,7 +31,7 @@ pipeline{
         stage("Docker Image creation..."){
             steps{
                 script {
-                    docker.build("sanmargparanjpe/healthtrack", "-f ./healthTracker/Dockerfile .")
+                    docker.build("sanmargparanjpe/healthtrack", "./healthTracker")
                 }
             }
             
