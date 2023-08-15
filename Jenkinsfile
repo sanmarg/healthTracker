@@ -12,7 +12,6 @@ pipeline{
             steps{
                 sh 'git clone https://github.com/sanmarg/healthTracker'
                 sh 'cd healthTracker && npm install'
-                sh 'cd healthTracker && mongod'
                 sh 'cd healthTracker && npm start'
             }
             
