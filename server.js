@@ -23,7 +23,8 @@ app.get('/*', (req, res) => {
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost:27017/reacthealthtracker',
-  { useNewUrlParser: true }
+  { useNewUrlParser: true,
+    useUnifiedTopology: true, }
 );
 
 app.use(morgan('dev'));
